@@ -1,0 +1,30 @@
+parameters:
+  general:
+    export: long  ## peptides, psms, long, and psm_ids
+    fdr: 0.01  ## increments 0.01
+    picker: True  
+    tag: py_protein_inference
+  data_restriction:
+    pep_restriction: None
+    peptide_length_restriction: None
+    q_value_restriction: None
+    custom_restriction: None
+  score:
+    protein_score: additive
+    psm_score: score
+    psm_score_type: additive
+  identifiers:
+    decoy_symbol: "DECOY_"
+    isoform_symbol: "-"
+    reviewed_identifier_symbol: "sp|"
+  inference:
+    inference_type: parsimony ## parsimony, peptide_centric(lower threshold); inclusion, exclusion (upper threshold)  or first_protein
+    grouping_type: subset_peptides ## subset_peptides, shared_peptides, or None
+  digest:
+    digest_type: trypsin
+    missed_cleavages: 2
+  parsimony:
+    lp_solver: pulp
+    shared_peptides: all ## all, best   best== winner take all
+  peptide_centric:
+    max_identifiers: 6

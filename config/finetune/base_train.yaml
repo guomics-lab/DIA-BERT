@@ -1,0 +1,33 @@
+buffer_size: 10
+ckpt_interval: 100
+data_path:
+dropout: 0
+epochs: 10
+eps: 1e-5
+freeze: false
+grad_accumulation: 1
+gradient_clip_val: 10.0
+learning_rate: 1e-3
+min_lr: 5e-4
+model_path:
+model_save_folder_path:
+n_log: 1
+num_sanity_val_steps: 0
+optim_weight_part_decay: true
+out_path:
+phase: train
+predict_batch_size: 16384
+prophet: true
+resume: false
+resume_checkpoint: ''
+save_model: true
+save_weights_only: false
+seed: 123
+tb_summarywriter:
+train_batch_size: 6144
+train_step_ratio: 0.25
+train_strategy: ddp
+val_step_ratio: 1.0
+warmup_ratio: 0.1
+warmup_strategy: exp
+weight_decay: 4e-5
