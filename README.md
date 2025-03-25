@@ -21,7 +21,7 @@ Supplementary Table 4: Quantification of peptide precursors and proteins using D
 Supplementary Table 5: Comparison of quantification performance on the three-species dataset using DIA-BERT with different quantification models and DIA-NN.
 
 ## Software
-The software and manual can be downloaded from the website https://dia-bert.guomics.com/.
+The software and manual can be downloaded from the website https://guomics.com/DIA-BERT/.
 On Windows systems, download and unzip the zip file. Click on DIA-BERT.exe to run without installation. 
 On Linux, download the file from the release. DIA-BERT runs install-free and requires no additional configuration of the environment. 
 
