@@ -46,3 +46,23 @@ Linux command-line run
 ```shell
 python main_linux.py
 ```
+
+## Hardware Requirements:
+•	Operating System: Supports both Windows and Linux operating systems.
+
+•	Processor: A dual-core processor is recommended, but it can run on a single-core processor.
+
+•	Memory: 40GB or more is recommended. If the mass spectrometry files or library files to be identified are large, it is advised to use more memory.
+
+•	Storage: At least 100GB of available hard disk space is recommended.
+
+•	Graphics Card: A 40GB NVIDIA GPU with CUDA support or a V100 32GB GPU is recommended.
+
+## License
+This software is licensed under a custom license that allows academic use but prohibits commercial use. For more details, see the LICENSE file.
+
+## Contact
+For any questions or licensing inquiries, please contact:
+Dr Guo
+E-mail: guotiannan@westlake.edu.cn
+www.guomics.com
