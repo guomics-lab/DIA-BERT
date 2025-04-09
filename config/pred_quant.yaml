@@ -1,0 +1,16 @@
+n_log: 1
+data_path: ""
+model_path: ""
+
+out_path: ""
+
+seed: 123
+
+model_type: 'ascend' # ascend, descend
+strategy: 'ddp' # ddp, deepspeed_stage_2, deepspeed_stage_2_offload
+
+# Training/inference options.
+train_batch_size: 6144 # the batch size of train phase
+predict_batch_size: 6144 # the batch size of val phase
+step_ratio: 0.5 # tensorboard monitor ratio
+buffer_size: 2 # the buffer size of train phase to shuffle

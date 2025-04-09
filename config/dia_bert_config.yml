@@ -1,0 +1,27 @@
+
+identify:
+  max_fragment: 20
+  iso_range: 4
+  mz_min: 249
+  mz_max: 1801
+  seed: 123
+  model_cycles: 16
+  frag_repeat_num: 5
+  n_cycles: 100
+  xrm_model_file: 'resource/model/base.ckpt'
+
+  default_thread: 5
+  default_rt_normalization: 50000
+  default_rt_peak_size: 500
+  default_batch_size: 500
+  default_batch_score_size: 20000
+  default_finetune_score: 0.2
+  default_train_epochs: 10
+
+finetune:
+  random_add: true
+
+gpu:
+  max_member_use_rate: 0.5
+
+

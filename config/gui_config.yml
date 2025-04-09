@@ -1,0 +1,21 @@
+
+font:
+  size: 10
+  faceName: Arial
+  family: 74
+  weight: 400
+
+about:
+  version:
+    fontSize: 16
+    weight: 400
+  introduce:
+    text: "DIA-BERT is user-friendly Graphical User Interface (GUI) that leverages a transformer based pre-trained 
+    artificial intelligence (AI) model for the analysis of data-independent acquisition (DIA) proteomics. 
+    Over 276 million of high-quality training samples from real MS files were used for identification model and 34 
+    million of training samples from synthetic MS files were used for quantification model. 
+    The tool is well-suited for multi-species datasets, particularly human proteomes. 
+    The output of DIA-BERT is provided as summarized tables in CSV format."
+    fontSize: 16
+    weight: 400
+
