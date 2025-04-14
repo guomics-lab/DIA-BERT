@@ -1,8 +1,7 @@
 
 <p align="center" style="margin-bottom: 0px !important;">
-  <img src=https://github.com/user-attachments/assets/ca2af8fa-a264-4a9b-8982-3448b029f646 width="120" height="120">
+  <img src=https://github.com/user-attachments/assets/3ef95b67-5244-49df-840c-ba9e3e9a3b84 width="120" height="120">
 </p>
-<h1 align="center" style="margin-top: -0px; font-size: 19px">DIA-BERT</h1>
 
 ## Description
 DIA-BERT: a pre-trained model for data-independent acquisition mass spectrometry-based proteomics data analysis
