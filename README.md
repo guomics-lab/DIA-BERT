@@ -7,7 +7,7 @@
 DIA-BERT: a pre-trained model for data-independent acquisition mass spectrometry-based proteomics data analysis
 
 ## Software
-The software and manual can be downloaded from the website https://guomics.com/DIA-BERT/.
+The software and manual can be downloaded from https://guomics.com/DIA-BERT/downloads.html.
 On Windows systems, download and unzip the zip file. Click on DIA-BERT.exe to run without installation. 
 On Linux, download the file from the release. DIA-BERT runs install-free and requires no additional configuration of the environment. 
 
@@ -74,3 +74,6 @@ If you’re interested in testing the model on such data, we’d be very keen to
 
 **Q: Would it be possible to make the model code available as open source?**  
 **A:** As an open-source initiative, our full source code — including the model architecture implementation — is publicly available on this GitHub repository under the license.
+
+**Q: Is it possible to create a spectral library using a human proteome FASTA file to use within DIA-BERT?**
+**A:** DIA-BERT does not support generating a spectral library directly from a FASTA file. However, you can create the spectral library using external tools. The required elements and format for the library are detailed in the user manual, which is available at: https://guomics.com/DIA-BERT/downloads.html.
