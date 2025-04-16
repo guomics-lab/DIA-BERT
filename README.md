@@ -65,3 +65,12 @@ For any questions or licensing inquiries, please contact:
 Dr Guo
 E-mail: guotiannan@westlake.edu.cn
 www.guomics.com
+
+
+## Frequently asked questions
+**Q: Can it analyze semi-specific tryptic samples with DIA?**  
+**A:** This model was trained exclusively on fully tryptic peptides (canonical tryptic cleavage rules). We have not yet evaluated its performance on semi-specific tryptic samples (e.g., peptides with missed cleavages or non-canonical termini).
+If you’re interested in testing the model on such data, we’d be very keen to learn about your findings! Your feedback would be invaluable for further optimizing the model’s generalizability. Feel free to share any results or observations with us.
+
+**Q: Would it be possible to make the model code available as open source?**  
+**A:** As an open-source initiative, our full source code — including the model architecture implementation — is publicly available on this GitHub repository under the license.
