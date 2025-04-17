@@ -77,3 +77,16 @@ If you’re interested in testing the model on such data, we’d be very keen to
 
 **Q: Is it possible to create a spectral library using a human proteome FASTA file to use within DIA-BERT?**
 **A:** DIA-BERT does not support generating a spectral library directly from a FASTA file. However, you can create the spectral library using external tools. The required elements and format for the library are detailed in the user manual, which is available at: https://guomics.com/DIA-BERT/downloads.html.
+
+**Q: What should I do if the file is too large and causes an out-of-memory (OOM) error?**
+**A:** You can try reducing the step_size and batch_size parameters to lower memory usage during training. Alternatively, consider running the process on a GPU with larger memory capacity.
+
+**Q: What information is required in a DIA-MS library for use with DIA-BERT?**
+**A:** The MS DIA spectral library used in DIA-BERT must include the following fields:
+PeptideSequence, FullUniModPeptideName, PrecursorCharge, PrecursorMz, FragmentMz, iRT, FragmentType, LibraryIntensity, FragmentCharge, ProteinID, and FragmentNumber.
+For detailed format specifications, please refer to the user manual, available at: https://guomics.com/DIA-BERT/downloads.html
+
+**Q: What format requirements does the DIA-MS library need to meet?**
+**A:** DIA-BERT supports spectral library files in the following formats: comma-separated (.csv, .txt) and tab-separated (.tsv, .xls, .xlsx).
+⚠️ Important: The library must not include non-fragmented precursor ions as fragments. Each fragment ion must originate from the actual fragmentation of the peptide backbone.
+
