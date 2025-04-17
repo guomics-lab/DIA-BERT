@@ -89,3 +89,6 @@ For detailed format specifications, please refer to the user manual, available a
 **A:** DIA-BERT supports spectral library files in the following formats: comma-separated (.csv, .txt) and tab-separated (.tsv, .xls, .xlsx).
 ⚠️ Important: The library must not include non-fragmented precursor ions as fragments. Each fragment ion must originate from the actual fragmentation of the peptide backbone.
 
+**Q: Can I train the model using my own data?**  
+**A:** Yes, the model architecture is fully open and publicly available. You can build and train your own model using custom data, and then replace the pre-trained model file in the software with your version.
+However, please note that the current version of the software does not support direct training within the application.
