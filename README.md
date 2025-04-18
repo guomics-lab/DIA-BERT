@@ -92,3 +92,6 @@ For detailed format specifications, please refer to the user manual, available a
 **Q: Can I train the model using my own data?**  
 **A:** Yes, the model architecture is fully open and publicly available. You can build and train your own model using custom data, and then replace the pre-trained model file in the software with your version.
 However, please note that the current version of the software does not support direct training within the application.
+
+**Q: How to install torch required by DIA-BERT?**  
+**A:** You can install torch from pytorch (https://pytorch.org/). It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch.
