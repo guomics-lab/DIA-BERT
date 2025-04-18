@@ -94,4 +94,4 @@ For detailed format specifications, please refer to the user manual, available a
 However, please note that the current version of the software does not support direct training within the application.
 
 **Q: How to install torch required by DIA-BERT?**  
-**A:** You can install torch from pytorch (https://pytorch.org/). It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch.
+**A:** You can install torch from pytorch (https://pytorch.org/). It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch. Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio".
