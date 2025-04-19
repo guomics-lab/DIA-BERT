@@ -95,3 +95,9 @@ However, please note that the current version of the software does not support d
 
 **Q: How to install torch required by DIA-BERT?**  
 **A:** You can install torch from pytorch (https://pytorch.org/). It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch. Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio".
+
+**Q: Can DIA-BERT process Astral data?**  
+**A:** Yes, it can process Astral files. You can select "Other" as the instrument type. However, the identification of Astral files has not been thoroughly evaluated yet, so please use them with caution.
+
+**Q: Is there a way to automatically convert FASTA files or other database formats into the format required by the software?**  
+**A:** You can use DIA-NN (https://github.com/vdemichev/DiaNN) to generate a library file in .tsv format.
