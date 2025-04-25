@@ -100,10 +100,17 @@ For detailed format specifications, please refer to the user manual, available a
 However, please note that the current version of the software does not support direct training within the application.
 
 **Q: How to install torch required by DIA-BERT?**  
-**A:** You can install torch from pytorch (https://pytorch.org/). It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch. Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio".
+**A:** You can install torch from pytorch (https://pytorch.org/). It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch. Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124".
 
 **Q: Can DIA-BERT process Astral data?**  
 **A:** Yes, it can process Astral files. You can select "Other" as the instrument type. However, the identification of Astral files has not been thoroughly evaluated yet, so please use them with caution.
 
 **Q: Is there a way to automatically convert FASTA files or other database formats into the format required by the software?**  
 **A:** You can use DIA-NN (https://github.com/vdemichev/DiaNN) to generate a library file in .tsv format.
+
+**Q: If I rent a cloud service with multiple V100 32GB GPU cores (e.g., Nx), do I expect the search speed to be Nx faster? Or, some programming is needed?**  
+**A:** GPU Usage Instructions:  
+1. If you utilize n GPUs, the processing speed will theoretically be close to n times faster than using a single GPU.  
+2. DIA-BERT automatically detects and uses all GPUs with more than 50% available memory, requiring no additional configuration.  
+3. If you prefer to manually specify which GPUs to use, please use the following parameter: --gpu_devices [List of GPU indices to be used, separated by commas]  
+   Example: --gpu_devices 0,1,2
