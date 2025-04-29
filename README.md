@@ -6,6 +6,10 @@
 ## Description
 DIA-BERT: a pre-trained model for data-independent acquisition mass spectrometry-based proteomics data analysis
 
+If you use DIA-BERT in your work, please cite the following publication:
+
+Liu, Z., Liu, P., Sun, Y. et al. DIA-BERT: pre-trained end-to-end transformer models for enhanced DIA proteomics data analysis. Nat Commun 16, 3530 (2025). https://doi.org/10.1038/s41467-025-58866-4.
+
 ## Software
 The software and manual can be downloaded from https://guomics.com/DIA-BERT/downloads.html.
 On Windows systems, download and unzip the zip file. Click on DIA-BERT.exe to run without installation. 
