@@ -73,6 +73,12 @@ if __name__ == '__main__':
     parser.add_option("--gpu_devices", type="string", default='auto',
                       help="GPU devices index list. Split by ',' ")
 
+    parser.add_option("--train_pkl_size", type="int", default=pkl_size_util.calculate_pkl_size(min_free_memory),
+                      help="The number of batches to be train at each time. The higher the value, the higher the overall efficiency.")
+
+    parser.add_option("--quant_pkl_size", type="int", default=pkl_size_util.calculate_pkl_size(min_free_memory),
+                      help="The number of batches to be quant at each time. The higher the value, the higher the overall efficiency.")
+
     (options, args) = parser.parse_args()
 
     if '--help' in args:
@@ -131,8 +137,8 @@ if __name__ == '__main__':
         input_param.frag_repeat_num = common_config_data['identify']['frag_repeat_num']
 
         input_param.gpu_devices = options.gpu_devices
-        input_param.train_pkl_size = pkl_size_util.calculate_pkl_size(min_free_memory)
-        input_param.quant_pkl_size = pkl_size_util.calculate_pkl_size(min_free_memory)
+        input_param.train_pkl_size = options.train_pkl_size
+        input_param.quant_pkl_size = options.quant_pkl_size
 
         if input_param.gpu_devices == 'auto':
             if len(usage_device_list) == 0:

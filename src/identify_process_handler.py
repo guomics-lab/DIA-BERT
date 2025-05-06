@@ -143,10 +143,16 @@ class IdentifyProcessHandler():
             msg_send_utils.send_msg(status=ProgressStepStatusEnum.FAIL_END)
 
     def get_file_list(self):
-        with open(self.input_param.rawdata_file_dir_path, mode='r') as f:
-            file_path_list = f.readlines()
-            for file_path in file_path_list:
-                self.mzml_files.append(file_path.strip())
+        # 使用,分割
+        rawdata_file_path_list = self.input_param.rawdata_file_dir_path.split(',')
+        for each_file_path in rawdata_file_path_list:
+            if each_file_path.endswith('.mzML') or each_file_path.endswith('.d'):
+                self.mzml_files.append(each_file_path.strip())
+            else:
+                with open(self.input_param.rawdata_file_dir_path, mode='r') as f:
+                    file_path_list = f.readlines()
+                    for file_path in file_path_list:
+                        self.mzml_files.append(file_path.strip())
 
     def deal_each_mzml(self, mzml_path, lib_max_intensity):
         mzml_name = os.path.split(mzml_path)[-1]

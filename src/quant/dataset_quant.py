@@ -26,7 +26,7 @@ def collate_batch(batch_data):
     one_batch_precursor_id = [batch["precursor_id"] for batch in batch_data]
 
     return one_batch_file_name, one_batch_rsm, one_batch_precursor_id, \
-           one_batch_feat, one_batch_frag_info
+        one_batch_feat, one_batch_frag_info
 
 
 def shuffle_file_list(file_list, seed):
@@ -53,109 +53,26 @@ def create_iterable_dataset(data_path,
         :param read_part: BOOL. IterableDiabertDataset if read_part is True, else DataLoader.
     :return:
     """
-    if parse in ['train', 'val']:
-        train_path = os.path.join(data_path, 'sp_train_feat')
-        valid_path = os.path.join(data_path, 'sp_test_feat')
+    valid_file_list = glob.glob(f'{data_path}/*.pkl')
 
-        train_file_list = [os.path.join(train_path, filename) for filename in os.listdir(train_path) \
-                           if (filename.endswith("pkl")) and (filename != 'target.pkl')]
-        valid_file_list = [os.path.join(valid_path, filename) for filename in os.listdir(valid_path) \
-                           if (filename.endswith("pkl"))]
-
-        random.shuffle(train_file_list)
-
-        logging.info(
-            f"******************train loaded: {len(train_file_list)}; val load {len(valid_file_list)}**********"
-        )
-    else:
-        valid_file_list = glob.glob(f'{data_path}/*.pkl')
+    file_bin_dict = defaultdict(list)
+    gpu_num = 1
 
     #
-    if read_part:
-        if parse == 'train':
-            #
-            random.shuffle(train_file_list)
-            train_file_list = shuffle_file_list(train_file_list, config['seed'])
+    for i in range(len(valid_file_list)):
+        file_bin_dict[i // 1].append(valid_file_list[i])
+    file_bin_list = list(file_bin_dict.keys())
 
-            #
-            file_bin_dict = defaultdict(list)
-            gpu_num = torch.cuda.device_count() if torch.cuda.is_available() else 1
+    val_dl = IterableDiabertDataset(file_bin_list,
+                                    file_bin_dict=file_bin_dict,
+                                    batch_size=config["predict_batch_size"],
+                                    gpu_num=gpu_num,
+                                    shuffle=False)
 
-            #
-            for i in range(len(train_file_list)):
-                file_bin_dict[i // 3].append(train_file_list[i])
-            file_bin_list = list(file_bin_dict.keys())
-
-            train_dl = IterableDiabertDataset(file_bin_list,
-                                            file_bin_dict=file_bin_dict,
-                                            batch_size=config["train_batch_size"],
-                                            buffer_size=len(file_bin_list), #
-                                            gpu_num=gpu_num,
-                                            shuffle=True,
-                                            seed=config['seed'])
-        else:
-            #
-
-            #
-            file_bin_dict = defaultdict(list)
-            gpu_num = 1
-
-            #
-            for i in range(len(valid_file_list)):
-                file_bin_dict[i // 1].append(valid_file_list[i])
-            file_bin_list = list(file_bin_dict.keys())
-
-            val_dl = IterableDiabertDataset(file_bin_list,
-                                          file_bin_dict=file_bin_dict,
-                                          batch_size=config["predict_batch_size"],
-                                          gpu_num=gpu_num,
-                                          shuffle=False)
-
-    else:
-        if parse == 'train':
-            #
-            data_set_list = []
-            for train_file in train_file_list:
-                f = open(train_file, "rb")
-                data_set_list.append(pickle.loads(f.read()))
-                f.close()
-
-            train_data_concat = ConcatDataset(data_set_list)
-            train_dl = DataLoader(train_data_concat,
-                                  shuffle=True,
-                                  batch_size=config["train_batch_size"],
-                                  pin_memory=True,
-                                  num_workers=0,
-                                  collate_fn=collate_batch)
-            logging.info("train df load finish!!")
-        else:
-            #
-            data_set_list = []
-            for val_file in valid_file_list:
-                f = open(val_file, "rb")
-                data_set_list.append(pickle.loads(f.read()))
-                f.close()
-
-            val_data_concat = ConcatDataset(data_set_list)
-            val_dl = DataLoader(val_data_concat,
-                                shuffle=False,
-                                batch_size=config["predict_batch_size"],
-                                pin_memory=True,
-                                num_workers=0,
-                                collate_fn=collate_batch)
-            logging.info("val df load finish!!")
-
-    if parse == 'train':
-        logging.info(
-            f"Data loaded: {len(train_dl) * config['train_batch_size']:,} training samples"
-        )
-
-        return train_dl
-    else:
-        logging.info(
-            f"{len(val_dl) * config['predict_batch_size']:,} validation samples"
-        )
-        return val_dl
+    logging.info(
+        f"{len(val_dl) * config['predict_batch_size']:,} validation samples"
+    )
+    return val_dl
 
 
 class IterableDiabertDataset(IterableDataset):
@@ -208,7 +125,7 @@ class IterableDiabertDataset(IterableDataset):
                           batch_size=self.batch_size,
                           pin_memory=True,
                           num_workers=0,
-                          collate_fn=collate_batch,)
+                          collate_fn=collate_batch, )
 
     def set_epoch(self, epoch):
         self.epoch = epoch

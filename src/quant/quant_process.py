@@ -79,6 +79,8 @@ class QuantProcess():
         config["out_path"] = out_path
         mkdir_p(config["out_path"])
 
+        config["predict_batch_size"] = self.each_pkl_size
+
         config["model_path"] = self.pred_quant_model_path
         config["data_path"] = os.path.join(self.base_output, 'quant', 'data')
 

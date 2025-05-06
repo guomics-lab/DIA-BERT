@@ -3,7 +3,7 @@ from enum import IntEnum
 
 from src.common.model.score_model import FeatureEngineer
 
-VERSION = 'DIA-BERT V1.0'
+VERSION = 'DIA-BERT V1.1'
 
 mz_rt_unit_list = ['ppm', 'Da']
 
