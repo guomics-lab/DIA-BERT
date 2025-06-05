@@ -1,0 +1,17 @@
+pandas
+pypubsub
+pyyaml
+scikit-learn
+pyteomics
+statsmodels
+ropwr
+pulp
+lxml
+tensorboard
+lightning
+scipy
+matplotlib
+gputil
+ecos
+numpy==1.26.4
+pyinstaller==6.2.0
