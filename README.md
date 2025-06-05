@@ -32,7 +32,7 @@ source activate DIA-BERT (If the command doesn't work, please refer to the Conda
 ```
 
 ```shell
-pip install -r requirements.txt 
+pip install -r requirements.txt (On Linux, there's no need to install wxPython)
 ```
 
 
