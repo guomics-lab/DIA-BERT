@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 **You need install torch from pytorch (https://pytorch.org/)**. It is advisable to install the entire pytorch package and follow the official installation method provided by pytorch.
 
-Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124".
+Specifically, first select the CUDA version according to your own operating system, and then, based on the CUDA version, choose the corresponding installation command to execute. For example, run "pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124". You can check the installed CUDA version by running the nvcc --version command.
 
 
 Run GUI
