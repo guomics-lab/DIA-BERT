@@ -32,7 +32,7 @@ source activate DIA-BERT (If the command doesn't work, please refer to the Conda
 ```
 
 ```shell
-pip install -r requirements.txt
+pip install -r requirements.txt 
 ```
 
 
@@ -43,7 +43,7 @@ Specifically, first select the CUDA version according to your own operating syst
 
 Run GUI
 ```shell
-python main_applet.py
+python main_applet.py (On Linux, there's no need to install wxPython.)
 ```
 
 Windows command-line run
