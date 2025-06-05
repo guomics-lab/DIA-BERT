@@ -28,7 +28,7 @@ cd DIA-BERT
 
 ```shell
 conda create -n DIA-BERT python=3.10
-conda activate DIA-BERT (If the command doesn't work, please refer to the Conda installation guide for instructions on how to activate Conda.)
+source activate DIA-BERT (If the command doesn't work, please refer to the Conda installation guide for instructions on how to activate Conda.)
 ```
 
 ```shell
