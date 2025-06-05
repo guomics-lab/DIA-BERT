@@ -32,8 +32,10 @@ source activate DIA-BERT (If the command doesn't work, please refer to the Conda
 ```
 
 ```shell
-On Windows systems, pip install -r requirements_windows.txt
-On Linux, pip install -r requirements_linux.txt
+#On Windows systems
+pip install -r requirements_windows.txt
+#On Linux
+pip install -r requirements_linux.txt
 ```
 
 
