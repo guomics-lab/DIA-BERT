@@ -121,3 +121,13 @@ However, please note that the current version of the software does not support d
 2. DIA-BERT automatically detects and uses all GPUs with more than 50% available memory, requiring no additional configuration.  
 3. If you prefer to manually specify which GPUs to use, please use the following parameter: --gpu_devices [List of GPU indices to be used, separated by commas]  
    Example: --gpu_devices 0,1,2
+
+**Q: How do I pass multiple file paths using the --rawdata_file_dir_path parameter?**  
+**A:** To combine the results of individual analyses for cross-run quantification, you can set the following parameters:  
+  --open_identify=0 --open_cross_quantification=1  
+For example:  
+  cd /DIA_BERT/00Versions/v1.1; python main_linux.py  
+  --rawdata_file_dir_path=/DIA_BERT/00Benchmark/DZ/Raw_data/Combined/DZ_run_combined.txt   
+  --lib=/ DIA_BERT/lib_proteome/DPHLv2_reviewedfull_library_QC.tsv  
+  --out_path=/ DIA_BERT/00Benchmark/DZ/Raw_data/Combined  
+  --open_identify=0 --open_cross_quantification=1  
