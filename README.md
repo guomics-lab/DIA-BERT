@@ -131,3 +131,7 @@ For example:
   --lib=/ DIA_BERT/lib_proteome/DPHLv2_reviewedfull_library_QC.tsv  
   --out_path=/ DIA_BERT/00Benchmark/DZ/Raw_data/Combined  
   --open_identify=0 --open_cross_quantification=1  
+  
+**Q: How to find or create the library file for HYC dataset?**  
+**A:** You can download the library file using the link below:
+https://pan.baidu.com/share/init?surl=Vx-61YbQVPxMTby4bB_l2A&pwd=1y9r 
