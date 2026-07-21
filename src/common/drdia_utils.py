@@ -148,7 +148,7 @@ def replace_modifications(text):
     return text
 
 
-def relpace_isoform(text):
+def replace_isoform(text):
     result = re.sub(r'-\d+', '', text)
     result = sorted(set(result.split(';')), key=result.index)
     result = ';'.join(result)
@@ -193,7 +193,7 @@ def load_library(library_file, protein_infer_key, transition_group_id_type=1, lo
         if 'UniprotID' not in all_lib_cols:
             library['UniprotID'] = library[constant.OUTPUT_COLUMN_PROTEIN]
 
-    library['UniprotID'] = library['UniprotID'].astype(str).replace(',', ';').apply(relpace_isoform)
+    library['UniprotID'] = library['UniprotID'].astype(str).replace(',', ';').apply(replace_isoform)
 
     # if 'ExcludeFromAssay' in library.columns:
     #     library = library[library['ExcludeFromAssay'] == False]
